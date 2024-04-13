@@ -75,7 +75,7 @@ class Inserting extends basicInfo {
                 }
 
                 int roll = Integer.parseInt(str);
-                sc.nextLine();
+                // sc.nextLine();
                 System.out.print("Student First Name:");
                 String Fname = sc.nextLine();
 
@@ -85,6 +85,7 @@ class Inserting extends basicInfo {
                         Fname = sc.nextLine();
                     } else {
                         System.out.print("First Name: " + Fname);
+                        System.out.println();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -99,6 +100,7 @@ class Inserting extends basicInfo {
                         Lname = sc.nextLine();
                     } else {
                         System.out.print("Last Name: " + Lname);
+                        System.out.println();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -117,21 +119,21 @@ class Inserting extends basicInfo {
                 String batch = sc.nextLine();
                 System.out.print("Eng: ");
                 float eng = sc.nextFloat();
-                System.out.println("Math: ");
+                System.out.print("Math: ");
                 float math = sc.nextFloat();
                 System.out.print("Phy: ");
                 float phy = sc.nextFloat();
-                System.out.println("Che: ");
+                System.out.print("Che: ");
                 float che = sc.nextFloat();
                 System.out.print("Computer:");
                 float comp = sc.nextFloat();
-                System.out.println("Statics: ");
+                System.out.print("Statics: ");
                 float statics = sc.nextFloat();
                 float Total = eng + math + phy + che + comp + statics;
                 float Avg = (Float) Total / 5;
                 String values = String.format(
                         "Insert into  Student (Roll,Fname,Lname,gender,email,number,class,section,batch,Eng,Math,Phy,Che,Computer,Stat,Total,Avg)"
-                                + "VALUES(%d,'%s','%s','%s','%s','%s','%s','%s','%s',%d,%d,%d,%d,%d,%d,%d,%d)",
+                                + "VALUES(%d,'%s','%s','%s','%s','%s','%s','%s','%s',%f,%f,%f,%f,%f,%f,%f,%f)",
                         roll, Fname, Lname, Gender, email, number, classes, section, batch, eng, math, phy, che, comp,
                         statics, Total, Avg);
                         //Excute Query
