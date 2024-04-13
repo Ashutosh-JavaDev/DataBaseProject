@@ -54,16 +54,22 @@ class DatabaseCreated {
 class Inserting extends basicInfo {
     public void insertValue() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(url, username, password);
-            Statement stat = conn.createStatement();
+            Class.forName("com.mysql.cj.jdbc.Driver");//Driver Location
+
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Driver not Found", e.getMessage(), JOptionPane.ERROR_MESSAGE);
+        }
+        // Built Connection
+        try {
+            Connection conn = DriverManager.getConnection(url, username, password);
+            Statement stat = conn.createStatement();
+            
         } catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "ERROR:", e.getMessage(), JOptionPane.ERROR_MESSAGE);
         }
+
     }
 }
 
