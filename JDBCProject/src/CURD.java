@@ -3,7 +3,15 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
-
+// Class
+class basicInfo{
+  public void info(){
+    String url="jdbc:mysql://localhost:3306/SchoolDB";
+    String username="root";
+    String password="@Radhakrishna297";
+  }
+}
+// New Class
 class DatabaseCreated {
     Connection conn = null;
     Statement state = null;
@@ -43,7 +51,13 @@ class DatabaseCreated {
     }
 
 }
-
+// New Class
+class Inserting extends basicInfo{
+    public void insertValue(){
+        info();
+        
+    }
+}
 public class CURD {
     public static void main(String[] args) throws Exception {
         DatabaseCreated ob = new DatabaseCreated();
