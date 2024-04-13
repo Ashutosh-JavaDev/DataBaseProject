@@ -77,61 +77,73 @@ class Inserting extends basicInfo {
                 int roll = Integer.parseInt(str);
                 sc.nextLine();
                 System.out.print("Student First Name:");
-                String Fname=sc.nextLine();
+                String Fname = sc.nextLine();
 
-                try{
-                    if(Fname.equals(" ")){
+                try {
+                    if (Fname.equals(" ")) {
                         System.out.print("Enter Valid Name");
-                        Fname=sc.nextLine();
+                        Fname = sc.nextLine();
+                    } else {
+                        System.out.print("First Name: " + Fname);
                     }
-                    else{
-                        System.out.print("First Name: "+Fname);
-                    }
-                }
-                catch(Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 
                 System.out.print("Student Last Name:");
-                String Lname=sc.nextLine();
+                String Lname = sc.nextLine();
 
-                try{
-                    if(Lname.equals(" ")){
+                try {
+                    if (Lname.equals(" ")) {
                         System.out.print("Enter Valid Name");
-                        Lname=sc.nextLine();
+                        Lname = sc.nextLine();
+                    } else {
+                        System.out.print("Last Name: " + Lname);
                     }
-                    else{
-                        System.out.print("Last Name: "+Lname);
-                    }
-                }
-                catch(Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 System.out.print("Class: ");
-                String classes=sc.nextLine();
+                String classes = sc.nextLine();
                 System.out.print("Section: ");
-                String section=sc.nextLine();
+                String section = sc.nextLine();
                 System.out.print("Gender: ");
-                String Gender=sc.nextLine();
+                String Gender = sc.nextLine();
                 System.out.print("Email: ");
-                String email=sc.nextLine();
+                String email = sc.nextLine();
                 System.out.print("Phone Number :");
-                String number=sc.nextLine();
+                String number = sc.nextLine();
                 System.out.print("Session Completing Year: ");
-                String batch=sc.nextLine();
+                String batch = sc.nextLine();
                 System.out.print("Eng: ");
-                float eng=sc.nextFloat();
+                float eng = sc.nextFloat();
                 System.out.println("Math: ");
-                float math=sc.nextFloat();
+                float math = sc.nextFloat();
                 System.out.print("Phy: ");
-                float phy=sc.nextFloat();
+                float phy = sc.nextFloat();
                 System.out.println("Che: ");
-                float che=sc.nextFloat();
+                float che = sc.nextFloat();
                 System.out.print("Computer:");
-                float comp=sc.nextFloat();
+                float comp = sc.nextFloat();
                 System.out.println("Statics: ");
-                float statics=sc.nextFloat();
-                
+                float statics = sc.nextFloat();
+                float Total = eng + math + phy + che + comp + statics;
+                float Avg = (Float) Total / 5;
+                String values = String.format(
+                        "Insert into  Student (Roll,Fname,Lname,gender,email,number,class,section,batch,Eng,Math,Phy,Che,Computer,Stat,Total,Avg)"
+                                + "VALUES(%d,'%s','%s','%s','%s','%s','%s','%s','%s',%d,%d,%d,%d,%d,%d,%d,%d)",
+                        roll, Fname, Lname, Gender, email, number, classes, section, batch, eng, math, phy, che, comp,
+                        statics, Total, Avg);
+                        //Excute Query
+                        int result=stat.executeUpdate(values);
+                        if(result>0){
+                            JOptionPane.showMessageDialog(null,"Data Inserted Sucessfully","Success",JOptionPane.INFORMATION_MESSAGE);
+
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(null,"Data Not Inserted Sucessfully","Error!",JOptionPane.INFORMATION_MESSAGE);
+
+                        }
             }
 
         } catch (SQLException e) {
