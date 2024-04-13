@@ -107,6 +107,11 @@ class Inserting extends basicInfo {
                 catch(Exception e){
                     e.printStackTrace();
                 }
+                System.out.print("Class: ");
+                String classes=sc.nextLine();
+                System.out.print("Section: ");
+                String section=sc.nextLine();
+                
             }
 
         } catch (SQLException e) {
