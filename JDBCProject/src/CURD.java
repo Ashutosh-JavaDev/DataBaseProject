@@ -125,6 +125,12 @@ class Inserting extends basicInfo {
                 float math=sc.nextFloat();
                 System.out.print("Phy: ");
                 float phy=sc.nextFloat();
+                System.out.println("Che: ");
+                float che=sc.nextFloat();
+                System.out.print("Computer:");
+                float comp=sc.nextFloat();
+                System.out.println("Statics: ");
+                float statics=sc.nextFloat();
                 
             }
 
