@@ -111,6 +111,20 @@ class Inserting extends basicInfo {
                 String classes=sc.nextLine();
                 System.out.print("Section: ");
                 String section=sc.nextLine();
+                System.out.print("Gender: ");
+                String Gender=sc.nextLine();
+                System.out.print("Email: ");
+                String email=sc.nextLine();
+                System.out.print("Phone Number :");
+                String number=sc.nextLine();
+                System.out.print("Session Completing Year: ");
+                String batch=sc.nextLine();
+                System.out.print("Eng: ");
+                float eng=sc.nextFloat();
+                System.out.println("Math: ");
+                float math=sc.nextFloat();
+                System.out.print("Phy: ");
+                float phy=sc.nextFloat();
                 
             }
 
