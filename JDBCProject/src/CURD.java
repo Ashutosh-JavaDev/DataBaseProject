@@ -55,9 +55,9 @@ class DatabaseCreated {
 // New Class
 class Inserting extends basicInfo {
     public void insertValue() {
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");//Driver Location
+            Class.forName("com.mysql.cj.jdbc.Driver");// Driver Location
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -68,17 +68,15 @@ class Inserting extends basicInfo {
             Connection conn = DriverManager.getConnection(url, username, password);
             Statement stat = conn.createStatement();
             System.out.println("Enter the Roll Number of the Student\nand Press STOP for stop Entering Data");
-            while(true){
-                String str=sc.nextLine();
-                if(str.equalsIgnoreCase("STOP")){
-                    return;
+            while (true) {
+                String str = sc.nextLine();
+                if (str.equalsIgnoreCase("STOP")) {
+                    break;
                 }
-                try{
 
-                }
-                catch(MissingFormatArgumentException e){
-                    e.printStackTrace();
-                }
+                int roll = Integer.parseInt(str);
+                sc.nextLine();
+
             }
 
         } catch (SQLException e) {
