@@ -5,11 +5,9 @@ import javax.swing.JOptionPane;
 import java.sql.SQLException;
 // Class
 class basicInfo{
-  public void info(){
     String url="jdbc:mysql://localhost:3306/SchoolDB";
     String username="root";
     String password="@Radhakrishna297";
-  }
 }
 // New Class
 class DatabaseCreated {
@@ -53,9 +51,20 @@ class DatabaseCreated {
 }
 // New Class
 class Inserting extends basicInfo{
-    public void insertValue(){
-        info();
-        
+    public void insertValue(){       
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn=DriverManager.getConnection(url,username,password);
+            Statement stat=conn.createStatement();
+        }
+        catch(ClassNotFoundException e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Driver not Found", e.getMessage(), JOptionPane.ERROR_MESSAGE);
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Databse Not Created", e.getMessage(), JOptionPane.ERROR_MESSAGE);
+        }
     }
 }
 public class CURD {
