@@ -156,7 +156,7 @@ class Inserting extends basicInfo {
 
 public class CURD {
     public static void main(String[] args) throws Exception {
-        DatabaseCreated ob = new DatabaseCreated();
-        ob.DBcreate();
+        Inserting ob = new Inserting();
+        ob.insertValue();
     }
 }
