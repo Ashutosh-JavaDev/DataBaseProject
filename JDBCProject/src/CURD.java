@@ -76,7 +76,37 @@ class Inserting extends basicInfo {
 
                 int roll = Integer.parseInt(str);
                 sc.nextLine();
+                System.out.print("Student First Name:");
+                String Fname=sc.nextLine();
 
+                try{
+                    if(Fname.equals(" ")){
+                        System.out.print("Enter Valid Name");
+                        Fname=sc.nextLine();
+                    }
+                    else{
+                        System.out.print("First Name: "+Fname);
+                    }
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+
+                System.out.print("Student Last Name:");
+                String Lname=sc.nextLine();
+
+                try{
+                    if(Lname.equals(" ")){
+                        System.out.print("Enter Valid Name");
+                        Lname=sc.nextLine();
+                    }
+                    else{
+                        System.out.print("Last Name: "+Lname);
+                    }
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
             }
 
         } catch (SQLException e) {
