@@ -132,7 +132,7 @@ class Inserting extends basicInfo {
                 float Total = eng + math + phy + che + comp + statics;
                 float Avg = (Float) Total / 5;
                 String values = String.format(
-                        "Insert into  Student (Roll,Fname,Lname,gender,email,number,class,section,batch,Eng,Math,Phy,Che,Computer,Stat,Total,Avg)"
+                        "Insert into  Student (Roll,Fname,Lname,gender,email,number,class,section,batch,Eng,Math,Phy,Che,Computer,Stat,Total,Ave)"
                                 + "VALUES(%d,'%s','%s','%s','%s','%s','%s','%s','%s',%f,%f,%f,%f,%f,%f,%f,%f)",
                         roll, Fname, Lname, Gender, email, number, classes, section, batch, eng, math, phy, che, comp,
                         statics, Total, Avg);
