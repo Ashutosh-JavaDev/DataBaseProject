@@ -67,8 +67,8 @@ class Inserting extends basicInfo {
         try {
             Connection conn = DriverManager.getConnection(url, username, password);
             Statement stat = conn.createStatement();
-            System.out.println("Enter the Roll Number of the Student\nand Press STOP for stop Entering Data");
             while (true) {
+                System.out.println("Enter the Roll Number of the Student\nand Press STOP for stop Entering Data");
                 String str = sc.nextLine();
                 if (str.equalsIgnoreCase("STOP")) {
                     break;
@@ -136,16 +136,17 @@ class Inserting extends basicInfo {
                                 + "VALUES(%d,'%s','%s','%s','%s','%s','%s','%s','%s',%f,%f,%f,%f,%f,%f,%f,%f)",
                         roll, Fname, Lname, Gender, email, number, classes, section, batch, eng, math, phy, che, comp,
                         statics, Total, Avg);
-                        //Excute Query
-                        int result=stat.executeUpdate(values);
-                        if(result>0){
-                            JOptionPane.showMessageDialog(null,"Data Inserted Sucessfully","Success",JOptionPane.INFORMATION_MESSAGE);
+                // Excute Query
+                int result = stat.executeUpdate(values);
+                if (result > 0) {
+                    JOptionPane.showMessageDialog(null, "Data Inserted Sucessfully", "Success",
+                            JOptionPane.INFORMATION_MESSAGE);
 
-                        }
-                        else{
-                            JOptionPane.showMessageDialog(null,"Data Not Inserted Sucessfully","Error!",JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Data Not Inserted Sucessfully", "Error!",
+                            JOptionPane.INFORMATION_MESSAGE);
 
-                        }
+                }
             }
 
         } catch (SQLException e) {
