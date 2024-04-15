@@ -129,8 +129,9 @@ class Inserting extends basicInfo {
                 float comp = sc.nextFloat();
                 System.out.print("Statics: ");
                 float statics = sc.nextFloat();
+                System.out.println("Press Enter to add new Data");
                 float Total = eng + math + phy + che + comp + statics;
-                sc.nextLine();
+                // sc.nextLine();
                 float Avg = (Float) Total / 6;
                 sc.nextLine();
                 String values = String.format(
