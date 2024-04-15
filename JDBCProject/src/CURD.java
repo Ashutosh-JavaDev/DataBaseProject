@@ -181,6 +181,13 @@ class updating extends Inserting {
                 System.out.println("Enter New Roll Number");
                 int newRoll=sc.nextInt();
                 String value=String.format("Update Student set Roll=%d where Roll=%d",newRoll,oldRoll);
+                int result=statement.executeUpdate(value);
+                if(result>0){
+                    JOptionPane.showMessageDialog(null, statement, "Data Updated", JOptionPane.INFORMATION_MESSAGE);
+                }
+                else{
+                    System.out.println("Data Not Updated");
+                }
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Updated", JOptionPane.ERROR_MESSAGE);
