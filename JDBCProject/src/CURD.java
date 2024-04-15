@@ -188,6 +188,8 @@ class updating extends Inserting {
                 else{
                     System.out.println("Data Not Updated");
                 }
+                break;
+                
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Updated", JOptionPane.ERROR_MESSAGE);
