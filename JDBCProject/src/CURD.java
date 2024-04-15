@@ -159,6 +159,9 @@ class Inserting extends basicInfo {
 
     }
 }
+class updating extends Inserting{
+    
+}
 
 public class CURD {
     public static void main(String[] args) throws Exception {
