@@ -189,7 +189,19 @@ class updating extends Inserting {
                     System.out.println("Data Not Updated");
                 }
                 break;
-                
+                case 2:
+                System.out.println("Enter Roll Number Whose First Name want to Update");
+                int oldFname=sc.nextInt();
+                System.out.println("Enter the new Name want to Update.");
+                String newName=sc.nextLine();
+                String values=String.format("Update Student set FName='%s' where Roll=%d",newName,oldFname);
+                int re=statement.executeUpdate(values);
+                if(re>0){
+                    JOptionPane.showMessageDialog(null, "Success!", "Data Updated", JOptionPane.INFORMATION_MESSAGE);
+                }
+                else{
+                    System.out.println("Data Not Updated");
+                }
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Updated", JOptionPane.ERROR_MESSAGE);
