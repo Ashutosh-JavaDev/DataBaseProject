@@ -130,7 +130,9 @@ class Inserting extends basicInfo {
                 System.out.print("Statics: ");
                 float statics = sc.nextFloat();
                 float Total = eng + math + phy + che + comp + statics;
+                sc.nextLine();
                 float Avg = (Float) Total / 6;
+                sc.nextLine();
                 String values = String.format(
                         "Insert into  Student (Roll,Fname,Lname,gender,email,number,class,section,batch,Eng,Math,Phy,Che,Computer,Stat,Total,Ave)"
                                 + "VALUES(%d,'%s','%s','%s','%s','%s','%s','%s','%s',%f,%f,%f,%f,%f,%f,%f,%f)",
