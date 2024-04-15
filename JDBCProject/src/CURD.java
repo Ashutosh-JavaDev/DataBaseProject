@@ -183,7 +183,7 @@ class updating extends Inserting {
                 String value=String.format("Update Student set Roll=%d where Roll=%d",newRoll,oldRoll);
                 int result=statement.executeUpdate(value);
                 if(result>0){
-                    JOptionPane.showMessageDialog(null, statement, "Data Updated", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Success!", "Data Updated", JOptionPane.INFORMATION_MESSAGE);
                 }
                 else{
                     System.out.println("Data Not Updated");
@@ -197,7 +197,7 @@ class updating extends Inserting {
 
 public class CURD {
     public static void main(String[] args) throws Exception {
-        Inserting ob = new Inserting();
-        ob.insertValue();
+        updating ob = new updating();
+        ob.update();
     }
 }
