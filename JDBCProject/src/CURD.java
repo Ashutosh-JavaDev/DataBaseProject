@@ -162,10 +162,18 @@ class Inserting extends basicInfo {
 class updating extends Inserting{
     public void update(){
         try{
-            Class.forName("mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         }
         catch(ClassNotFoundException e){
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Class Not Found", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Driver Not Found", JOptionPane.ERROR_MESSAGE);
+        }
+        try{
+            Connection connection=DriverManager.getConnection(url, username, password);
+            Statement statement=connection.createStatement();
+            
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Updated", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
