@@ -174,7 +174,14 @@ class updating extends Inserting {
             System.out.println(
                     "Press 1: To Update Roll NO.\nPress 2: To Update FName\nPress 3: To Update LName\nPress 4: To Update Gender\nPress 5: To Update Email\nPress 6: To Update Phone Number\n Press 7: To Update Class\nPress 8: To Update Section\nPress 9: To Update Batch\nPress 10: To Update English Marks\nPress 11: To Update Math Marks\nPress 12: To Update Phy Marks\nPress 13: To Update Che Marks\nPress 14: To Update Computer Marks\nPress 15: To Update Statics Marks\nPress 16: To Update Total Marks\nPress 17: To Update Average");
             int press = sc.nextInt();
-            
+            switch (press) {
+                case 1:
+                System.out.println("Enter Old Roll Number");
+                int oldRoll=sc.nextInt();
+                System.out.println("Enter New Roll Number");
+                int newRoll=sc.nextInt();
+                String value=String.format("Update Student set Roll=%d where Roll=%d",newRoll,oldRoll);
+            }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Updated", JOptionPane.ERROR_MESSAGE);
         }
