@@ -11,6 +11,8 @@ class basicInfo {
     String url = "jdbc:mysql://localhost:3306/SchoolDB";
     String username = "root";
     String password = "@Radhakrishna297";
+    Scanner sc = new Scanner(System.in);
+
 }
 
 // New Class
@@ -55,7 +57,6 @@ class DatabaseCreated {
 // New Class
 class Inserting extends basicInfo {
     public void insertValue() {
-        Scanner sc = new Scanner(System.in);
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");// Driver Location
 
@@ -159,20 +160,22 @@ class Inserting extends basicInfo {
 
     }
 }
-class updating extends Inserting{
-    public void update(){
-        try{
+
+class updating extends Inserting {
+    public void update() {
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-        }
-        catch(ClassNotFoundException e){
+        } catch (ClassNotFoundException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Driver Not Found", JOptionPane.ERROR_MESSAGE);
         }
-        try{
-            Connection connection=DriverManager.getConnection(url, username, password);
-            Statement statement=connection.createStatement();
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            Statement statement = connection.createStatement();
+            System.out.println(
+                    "Press 1: To Update Roll NO.\nPress 2: To Update FName\nPress 3: To Update LName\nPress 4: To Update Gender\nPress 5: To Update Email\nPress 6: To Update Phone Number\n Press 7: To Update Class\nPress 8: To Update Section\nPress 9: To Update Batch\nPress 10: To Update English Marks\nPress 11: To Update Math Marks\nPress 12: To Update Phy Marks\nPress 13: To Update Che Marks\nPress 14: To Update Computer Marks\nPress 15: To Update Statics Marks\nPress 16: To Update Total Marks\nPress 17: To Update Average");
+            int press = sc.nextInt();
             
-        }
-        catch(SQLException e){
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Updated", JOptionPane.ERROR_MESSAGE);
         }
     }
