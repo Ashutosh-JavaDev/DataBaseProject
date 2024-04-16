@@ -5,6 +5,7 @@ import java.util.MissingFormatArgumentException;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
+import java.sql.ResultSet;;
 
 // Class
 class basicInfo {
@@ -13,6 +14,13 @@ class basicInfo {
     String password = "@Radhakrishna297";
     Scanner sc = new Scanner(System.in);
 
+    public void classCating() {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Class Not Found", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }
 
 // New Class
@@ -57,13 +65,7 @@ class DatabaseCreated {
 // New Class
 class Inserting extends basicInfo {
     public void insertValue() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");// Driver Location
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Driver not Found", e.getMessage(), JOptionPane.ERROR_MESSAGE);
-        }
+        classCating();
         // Built Connection
         try {
             Connection conn = DriverManager.getConnection(url, username, password);
@@ -130,7 +132,7 @@ class Inserting extends basicInfo {
                 float comp = sc.nextFloat();
                 System.out.print("Statics: ");
                 float statics = sc.nextFloat();
-                System.out.println("Press Enter to add new Data");
+                // System.out.println("Press Enter to add new Data");
                 float Total = eng + math + phy + che + comp + statics;
                 // sc.nextLine();
                 float Avg = (Float) Total / 6;
@@ -163,11 +165,7 @@ class Inserting extends basicInfo {
 
 class updating extends Inserting {
     public void update() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Driver Not Found", JOptionPane.ERROR_MESSAGE);
-        }
+        classCating();
         try {
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();
@@ -436,36 +434,46 @@ class updating extends Inserting {
         }
     }
 }
-class deleting extends updating{
-        public void delete(){
-            try{
-                Class.forName("com.mysql.cj.jdbc.Driver");
+
+class deleting extends updating {
+    public void delete() {
+        classCating();
+        try {
+            Connection conn = DriverManager.getConnection(url, username, password);
+            Statement state = conn.createStatement();
+            System.out.print("Enter Roll Number whose data want to Delete: ");
+            int roll = sc.nextInt();
+            String rollNo = String.format("Delete from Student where Roll=%d", roll);
+            int res = state.executeUpdate(rollNo);
+            if (res > 0) {
+                JOptionPane.showMessageDialog(null, "Success!", "Data Deleted!", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Error!", "Data Not Deleted", JOptionPane.ERROR_MESSAGE);
             }
-            catch(ClassNotFoundException e){
-                JOptionPane.showMessageDialog(null, e.getMessage(),"Class Not Found" ,JOptionPane.ERROR_MESSAGE);
-            }
-            try{
-                Connection conn=DriverManager.getConnection(url, username, password);
-                Statement state=conn.createStatement();
-                System.out.print("Enter Roll Number whose data want to Delete: ");
-                int roll=sc.nextInt();
-                String rollNo=String.format("Delete from Student where Roll=%d",roll);
-                int res=state.executeUpdate(rollNo);
-                if(res>0){
-                    JOptionPane.showMessageDialog(null, "Success!", "Data Deleted!", JOptionPane.INFORMATION_MESSAGE);
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "Error!", "Data Not Deleted", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-            catch(SQLException e){
-                JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Deleted!", JOptionPane.ERROR_MESSAGE);
-            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Deleted!", JOptionPane.ERROR_MESSAGE);
         }
+    }
 }
+
+class reading extends deleting {
+    public void read() {
+        classCating();
+        try{
+            Connection conn=DriverManager.getConnection(url,password,url);
+            Statement state=conn.createStatement();
+            String values=String.format("select*from Student");
+            ResultSet resultset=state.executeQuery(values);
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage(),"Error!",JOptionPane.ERROR_MESSAGE);
+        }
+    }
+}
+
 public class CURD {
     public static void main(String[] args) throws Exception {
-        deleting ob = new deleting();
-        ob.delete();
+        Inserting ob = new Inserting();
+        ob.insertValue();
     }
 }
