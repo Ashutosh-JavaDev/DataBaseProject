@@ -478,8 +478,11 @@ class reading extends deleting {
                 float Che=resultset.getFloat("Che");
                 float Computer=resultset.getFloat("Computer");
                 float Stat=resultset.getFloat("Stat");
-                
+                float Total=resultset.getFloat("Total");
+                float Avg=resultset.getFloat("Ave");
 
+                System.out.println("Roll: "+roll+"\nFirst Name: "+FirstName+"\nLast Name: "+LastName+"\nGender: "+Gender+"\nEmail: "+Email+"\nPhone Number: "+Phone+"\nBatch: "+Batch+"\nEnglish: "+Eng+"\nMath: "+Math+"\nPhysics: "+Phy+"\nChemistry: "+Che+"\nComputer: "+Computer+"\nStatics: "+Stat+"\nTotal: "+Total+"\nAverage: "+Avg+"\n");
+                System.out.println("----------------------------------------------------------------------------------------------------------------------------");
 
             }
         }
@@ -491,7 +494,7 @@ class reading extends deleting {
 
 public class CURD {
     public static void main(String[] args) throws Exception {
-        Inserting ob = new Inserting();
-        ob.insertValue();
+        reading ob = new reading();
+        ob.read();
     }
 }
