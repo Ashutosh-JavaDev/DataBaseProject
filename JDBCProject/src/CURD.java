@@ -311,7 +311,7 @@ class updating extends Inserting {
                     System.out.println("Enter Roll Number Whose English Marks want to Update: ");
                     int oldEng = sc.nextInt();
                     System.out.println("Enter the new English Marks want to Update.");
-                    String newEnglish = sc.nextLine();
+                    float newEnglish = sc.nextFloat();
                     String English = String.format("Update Student set Eng=%f where Roll=%d", newEnglish,
                             oldEng);
                     int english = statement.executeUpdate(English);
@@ -327,7 +327,7 @@ class updating extends Inserting {
                     System.out.println("Enter Roll Number Whose Math Marks want to Update: ");
                     int oldMath = sc.nextInt();
                     System.out.println("Enter the new English Marks want to Update.");
-                    String newMath = sc.nextLine();
+                    float newMath = sc.nextFloat();
                     String Math = String.format("Update Student set Math=%f where Roll=%d", newMath,
                             oldMath);
                     int math = statement.executeUpdate(Math);
@@ -342,11 +342,26 @@ class updating extends Inserting {
                     System.out.println("Enter Roll Number Whose Phy Marks want to Update: ");
                     int oldPhy = sc.nextInt();
                     System.out.println("Enter the new Phy Marks want to Update.");
-                    String newPhy = sc.nextLine();
+                    float newPhy = sc.nextFloat();
                     String Phy = String.format("Update Student set Phy=%f where Roll=%d", newPhy,
                             oldPhy);
                     int phy = statement.executeUpdate(Phy);
                     if (phy > 0) {
+                        JOptionPane.showMessageDialog(null, "Success!", "Data Updated",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        System.out.println("Data Not Updated");
+                    }
+                    break;
+                    case 13:
+                    System.out.println("Enter Roll Number Whose Che Marks want to Update: ");
+                    int oldChe = sc.nextInt();
+                    System.out.println("Enter the new Phy Marks want to Update.");
+                    float newChe = sc.nextFloat();
+                    String Che = String.format("Update Student set Che=%f where Roll=%d", newChe,
+                            oldChe);
+                    int che = statement.executeUpdate(Che);
+                    if (che > 0) {
                         JOptionPane.showMessageDialog(null, "Success!", "Data Updated",
                                 JOptionPane.INFORMATION_MESSAGE);
                     } else {
