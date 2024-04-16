@@ -322,8 +322,8 @@ class updating extends Inserting {
                         System.out.println("Data Not Updated");
                     }
                     break;
-                    // Case 11
-                    case 11:
+                // Case 11
+                case 11:
                     System.out.println("Enter Roll Number Whose Math Marks want to Update: ");
                     int oldMath = sc.nextInt();
                     System.out.println("Enter the new English Marks want to Update.");
@@ -338,7 +338,7 @@ class updating extends Inserting {
                         System.out.println("Data Not Updated");
                     }
                     break;
-                    case 12:
+                case 12:
                     System.out.println("Enter Roll Number Whose Phy Marks want to Update: ");
                     int oldPhy = sc.nextInt();
                     System.out.println("Enter the new Phy Marks want to Update.");
