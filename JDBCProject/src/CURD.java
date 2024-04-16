@@ -242,6 +242,8 @@ class updating extends Inserting {
                 case 5:
                     System.out.println("Enter Roll Number Whose Email want to Update: ");
                     int oldEmail = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.println("Enter the new Email want to Update.");
                     String newEmail = sc.nextLine();
                     String vas = String.format("Update Student set email='%s' where Roll=%d", newEmail, oldEmail);
@@ -257,6 +259,8 @@ class updating extends Inserting {
                 case 6:
                     System.out.println("Enter Roll Number Whose Phone Number want to Update: ");
                     int oldNumber = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.println("Enter the new Phone Number want to Update.");
                     String newNumber = sc.nextLine();
                     String vaes = String.format("Update Student set number='%s' where Roll=%d", newNumber, oldNumber);
@@ -271,6 +275,8 @@ class updating extends Inserting {
                 case 7:
                     System.out.println("Enter Roll Number Whose Class want to Update: ");
                     int oldClass = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.println("Enter the new Class want to Update.");
                     String newClass = sc.nextLine();
                     String vae = String.format("Update Student set class='%s' where Roll=%d", newClass, oldClass);
@@ -285,6 +291,8 @@ class updating extends Inserting {
                 case 8:
                     System.out.println("Enter Roll Number Whose Batch want to Update: ");
                     int oldBatch = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.println("Enter the new Batch want to Update.");
                     String newBatch = sc.nextLine();
                     String batch = String.format("Update Student set batch='%s' where Roll=%d", newBatch, oldBatch);
@@ -299,6 +307,8 @@ class updating extends Inserting {
                 case 9:
                     System.out.println("Enter Roll Number Whose Section want to Update: ");
                     int oldSecton = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.println("Enter the new Section want to Update.");
                     String newSection = sc.nextLine();
                     String section = String.format("Update Student set batch='%s' where Roll=%d", newSection,
@@ -315,6 +325,7 @@ class updating extends Inserting {
                 case 10:
                     System.out.println("Enter Roll Number Whose English Marks want to Update: ");
                     int oldEng = sc.nextInt();
+                    
                     System.out.println("Enter the new English Marks want to Update.");
                     float newEnglish = sc.nextFloat();
                     String English = String.format("Update Student set Eng=%f where Roll=%d", newEnglish,
