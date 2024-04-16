@@ -192,7 +192,7 @@ class updating extends Inserting {
                 case 2:
                 System.out.println("Enter Roll Number Whose First Name want to Update");
                 int oldFname=sc.nextInt();
-                System.out.println("Enter the new Name want to Update.");
+                System.out.println("Enter the new First Name want to Update.");
                 String newName=sc.nextLine();
                 String values=String.format("Update Student set FName='%s' where Roll=%d",newName,oldFname);
                 int re=statement.executeUpdate(values);
@@ -206,7 +206,7 @@ class updating extends Inserting {
                 case 3:
                 System.out.println("Enter Roll Number Whose Last Name want to Update");
                 int oldLname=sc.nextInt();
-                System.out.println("Enter the new Name want to Update.");
+                System.out.println("Enter the new Last Name want to Update.");
                 String newLname=sc.nextLine();
                 String valus=String.format("Update Student set LName='%s' where Roll=%d",newLname,oldLname);
                 int res=statement.executeUpdate(valus);
@@ -221,11 +221,26 @@ class updating extends Inserting {
                  case 4:
                 System.out.println("Enter Roll Number Whose Gender want to Update:\nM-Male\nF-Female\nT-Transgender");
                 int oldGender=sc.nextInt();
-                System.out.println("Enter the new Name want to Update.");
+                System.out.println("Enter the new Gender want to Update.");
                 String newGender=sc.nextLine();
                 String vals=String.format("Update Student set gender='%s' where Roll=%d",newGender,oldGender);
                 int resu=statement.executeUpdate(vals);
                 if(resu>0){
+                    JOptionPane.showMessageDialog(null, "Success!", "Data Updated", JOptionPane.INFORMATION_MESSAGE);
+                }
+                else{
+                    System.out.println("Data Not Updated");
+                }
+                break;
+                // Case 5
+                    case 5:
+                System.out.println("Enter Roll Number Whose Email want to Update: ");
+                int oldEmail=sc.nextInt();
+                System.out.println("Enter the new Email want to Update.");
+                String newEmail=sc.nextLine();
+                String vas=String.format("Update Student set email='%s' where Roll=%d",newEmail,oldEmail);
+                int reu=statement.executeUpdate(vas);
+                if(reu>0){
                     JOptionPane.showMessageDialog(null, "Success!", "Data Updated", JOptionPane.INFORMATION_MESSAGE);
                 }
                 else{
