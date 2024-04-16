@@ -447,7 +447,16 @@ class deleting extends updating{
             try{
                 Connection conn=DriverManager.getConnection(url, username, password);
                 Statement state=conn.createStatement();
-                
+                System.out.print("Enter Roll Number whose data want to Delete: ");
+                int roll=sc.nextInt();
+                String rollNo=String.format("Delete from Student where Roll=%d",roll);
+                int res=state.executeUpdate(rollNo);
+                if(res>0){
+                    JOptionPane.showMessageDialog(null, "Success!", "Data Deleted!", JOptionPane.INFORMATION_MESSAGE);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Error!", "Data Not Deleted", JOptionPane.ERROR_MESSAGE);
+                }
             }
             catch(SQLException e){
                 JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Deleted!", JOptionPane.ERROR_MESSAGE);
@@ -456,7 +465,7 @@ class deleting extends updating{
 }
 public class CURD {
     public static void main(String[] args) throws Exception {
-        updating ob = new updating();
-        ob.update();
+        deleting ob = new deleting();
+        ob.delete();
     }
 }
