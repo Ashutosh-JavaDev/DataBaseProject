@@ -368,7 +368,21 @@ class updating extends Inserting {
                         System.out.println("Data Not Updated");
                     }
                     break;
-
+                    case 14:
+                    System.out.println("Enter Roll Number Whose Computer Marks want to Update: ");
+                    int oldCom = sc.nextInt();
+                    System.out.println("Enter the new Computer Marks want to Update.");
+                    float newCom = sc.nextFloat();
+                    String Com = String.format("Update Student set Computer=%f where Roll=%d", newCom,
+                            oldCom);
+                    int com = statement.executeUpdate(Com);
+                    if (com > 0) {
+                        JOptionPane.showMessageDialog(null, "Success!", "Data Updated",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        System.out.println("Data Not Updated");
+                    }
+                    break;
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Updated", JOptionPane.ERROR_MESSAGE);
