@@ -172,7 +172,7 @@ class updating extends Inserting {
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();
             System.out.println(
-                    "Press 1: To Update Roll NO.\nPress 2: To Update FName\nPress 3: To Update LName\nPress 4: To Update Gender\nPress 5: To Update Email\nPress 6: To Update Phone Number\n Press 7: To Update Class\nPress 8: To Update Batch\nPress 9: To Update Section\nPress 10: To Update English Marks\nPress 11: To Update Math Marks\nPress 12: To Update Phy Marks\nPress 13: To Update Che Marks\nPress 14: To Update Computer Marks\nPress 15: To Update Statics Marks");
+                    "Press 1: To Update Roll NO.\nPress 2: To Update FName\nPress 3: To Update LName\nPress 4: To Update Gender\nPress 5: To Update Email\nPress 6: To Update Phone Number\nPress 7: To Update Class\nPress 8: To Update Batch\nPress 9: To Update Section\nPress 10: To Update English Marks\nPress 11: To Update Math Marks\nPress 12: To Update Phy Marks\nPress 13: To Update Che Marks\nPress 14: To Update Computer Marks\nPress 15: To Update Statics Marks");
             int press = sc.nextInt();
             switch (press) {
                 case 1:
@@ -192,6 +192,7 @@ class updating extends Inserting {
                 case 2:
                     System.out.println("Enter Roll Number Whose First Name want to Update");
                     int oldFname = sc.nextInt();
+                    sc.nextLine();
                     System.out.println("Enter the new First Name want to Update.");
                     String newName = sc.nextLine();
                     String values = String.format("Update Student set FName='%s' where Roll=%d", newName, oldFname);
@@ -206,6 +207,8 @@ class updating extends Inserting {
                 case 3:
                     System.out.println("Enter Roll Number Whose Last Name want to Update");
                     int oldLname = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.println("Enter the new Last Name want to Update.");
                     String newLname = sc.nextLine();
                     String valus = String.format("Update Student set LName='%s' where Roll=%d", newLname, oldLname);
@@ -222,6 +225,8 @@ class updating extends Inserting {
                     System.out
                             .println("Enter Roll Number Whose Gender want to Update:\nM-Male\nF-Female\nT-Transgender");
                     int oldGender = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.println("Enter the new Gender want to Update.");
                     String newGender = sc.nextLine();
                     String vals = String.format("Update Student set gender='%s' where Roll=%d", newGender, oldGender);
