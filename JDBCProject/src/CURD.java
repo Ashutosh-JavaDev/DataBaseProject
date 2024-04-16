@@ -437,7 +437,14 @@ class updating extends Inserting {
     }
 }
 class deleting extends updating{
-        
+        public void delete(){
+            try{
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            }
+            catch(ClassNotFoundException e){
+                JOptionPane.showMessageDialog(null, e.getMessage(),"Class Not Found" ,JOptionPane.ERROR_MESSAGE);
+            }
+        }
 }
 public class CURD {
     public static void main(String[] args) throws Exception {
