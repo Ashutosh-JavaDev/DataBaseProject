@@ -425,15 +425,13 @@ class updating extends Inserting {
                         System.out.println("Data Not Updated");
                     }
                     break;
-                case 16:
-                    System.out.println("Enter Roll Number whose Total  Marks want to Update: ");
-                    int totals = sc.nextInt();
-                    sc.nextLine();
 
-                    String tot = String.format("Update Student set Total=%f where Roll=%d");
                 default:
                     System.out.println("Individual Press");
                     break;
+            }
+            if (press == 10 || press == 11 || press == 12 || press == 13 || press == 14 || press == 15 | press == 16) {
+
             }
 
         } catch (SQLException e) {
