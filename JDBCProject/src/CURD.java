@@ -219,7 +219,7 @@ class updating extends Inserting {
                 break;
                 // Case 4
                  case 4:
-                System.out.println("Enter Roll Number Whose Gender want to Update");
+                System.out.println("Enter Roll Number Whose Gender want to Update:\nM-Male\nF-Female\nT-Transgender");
                 int oldGender=sc.nextInt();
                 System.out.println("Enter the new Name want to Update.");
                 String newGender=sc.nextLine();
