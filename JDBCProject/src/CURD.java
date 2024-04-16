@@ -353,7 +353,7 @@ class updating extends Inserting {
                         System.out.println("Data Not Updated");
                     }
                     break;
-                    case 13:
+                case 13:
                     System.out.println("Enter Roll Number Whose Che Marks want to Update: ");
                     int oldChe = sc.nextInt();
                     System.out.println("Enter the new Phy Marks want to Update.");
@@ -368,6 +368,7 @@ class updating extends Inserting {
                         System.out.println("Data Not Updated");
                     }
                     break;
+
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Updated", JOptionPane.ERROR_MESSAGE);
