@@ -430,9 +430,6 @@ class updating extends Inserting {
                     System.out.println("Individual Press");
                     break;
             }
-            if (press == 10 || press == 11 || press == 12 || press == 13 || press == 14 || press == 15 | press == 16) {
-
-            }
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Updated", JOptionPane.ERROR_MESSAGE);
