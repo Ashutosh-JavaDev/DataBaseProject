@@ -425,6 +425,9 @@ class updating extends Inserting {
                         System.out.println("Data Not Updated");
                     }
                     break;
+                default:
+                    System.out.println("Individual Press");
+                    break;
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Updated", JOptionPane.ERROR_MESSAGE);
