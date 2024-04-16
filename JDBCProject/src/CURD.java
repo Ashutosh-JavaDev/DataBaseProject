@@ -77,7 +77,7 @@ class Inserting extends basicInfo {
 
                 int roll = Integer.parseInt(str);
                 // sc.nextLine();
-                System.out.print("Student First Name:");
+                System.out.print("Student First Name: ");
                 String Fname = sc.nextLine();
 
                 try {
@@ -92,7 +92,7 @@ class Inserting extends basicInfo {
                     e.printStackTrace();
                 }
 
-                System.out.print("Student Last Name:");
+                System.out.print("Student Last Name: ");
                 String Lname = sc.nextLine();
 
                 try {
@@ -211,6 +211,21 @@ class updating extends Inserting {
                 String valus=String.format("Update Student set LName='%s' where Roll=%d",newLname,oldLname);
                 int res=statement.executeUpdate(valus);
                 if(res>0){
+                    JOptionPane.showMessageDialog(null, "Success!", "Data Updated", JOptionPane.INFORMATION_MESSAGE);
+                }
+                else{
+                    System.out.println("Data Not Updated");
+                }
+                break;
+                // Case 4
+                 case 4:
+                System.out.println("Enter Roll Number Whose Gender want to Update");
+                int oldGender=sc.nextInt();
+                System.out.println("Enter the new Name want to Update.");
+                String newGender=sc.nextLine();
+                String vals=String.format("Update Student set gender='%s' where Roll=%d",newGender,oldGender);
+                int resu=statement.executeUpdate(vals);
+                if(resu>0){
                     JOptionPane.showMessageDialog(null, "Success!", "Data Updated", JOptionPane.INFORMATION_MESSAGE);
                 }
                 else{
