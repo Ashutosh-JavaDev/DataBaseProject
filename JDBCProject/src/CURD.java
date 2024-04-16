@@ -383,7 +383,7 @@ class updating extends Inserting {
                         System.out.println("Data Not Updated");
                     }
                     break;
-                    case 15:
+                case 15:
                     System.out.println("Enter Roll Number Whose Statics Marks want to Update: ");
                     int oldStat = sc.nextInt();
                     System.out.println("Enter the new Computer Marks want to Update.");
