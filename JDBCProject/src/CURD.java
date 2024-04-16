@@ -110,7 +110,7 @@ class Inserting extends basicInfo {
                 String classes = sc.nextLine();
                 System.out.print("Section: ");
                 String section = sc.nextLine();
-                System.out.print("Gender: ");
+                System.out.print("Gender:M-Male\nF-Female\nT-TransGender ");
                 String Gender = sc.nextLine();
                 System.out.print("Email: ");
                 String email = sc.nextLine();
