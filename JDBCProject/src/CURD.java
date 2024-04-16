@@ -172,7 +172,7 @@ class updating extends Inserting {
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();
             System.out.println(
-                    "Press 1: To Update Roll NO.\nPress 2: To Update FName\nPress 3: To Update LName\nPress 4: To Update Gender\nPress 5: To Update Email\nPress 6: To Update Phone Number\n Press 7: To Update Class\nPress 8: To Update Section\nPress 9: To Update Batch\nPress 10: To Update English Marks\nPress 11: To Update Math Marks\nPress 12: To Update Phy Marks\nPress 13: To Update Che Marks\nPress 14: To Update Computer Marks\nPress 15: To Update Statics Marks\nPress 16: To Update Total Marks\nPress 17: To Update Average");
+                    "Press 1: To Update Roll NO.\nPress 2: To Update FName\nPress 3: To Update LName\nPress 4: To Update Gender\nPress 5: To Update Email\nPress 6: To Update Phone Number\n Press 7: To Update Class\nPress 8: To Update Batch\nPress 9: To Update Section\nPress 10: To Update English Marks\nPress 11: To Update Math Marks\nPress 12: To Update Phy Marks\nPress 13: To Update Che Marks\nPress 14: To Update Computer Marks\nPress 15: To Update Statics Marks\nPress 16: To Update Total Marks\nPress 17: To Update Average");
             int press = sc.nextInt();
             switch (press) {
                 case 1:
@@ -285,6 +285,21 @@ class updating extends Inserting {
                     String batch = String.format("Update Student set batch='%s' where Roll=%d", newBatch, oldBatch);
                     int Batch = statement.executeUpdate(batch);
                     if (Batch > 0) {
+                        JOptionPane.showMessageDialog(null, "Success!", "Data Updated",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        System.out.println("Data Not Updated");
+                    }
+                    break;
+                case 9:
+                    System.out.println("Enter Roll Number Whose Section want to Update: ");
+                    int oldSecton = sc.nextInt();
+                    System.out.println("Enter the new Section want to Update.");
+                    String newSection = sc.nextLine();
+                    String section = String.format("Update Student set batch='%s' where Roll=%d", newSection,
+                            oldSecton);
+                    int Section = statement.executeUpdate(section);
+                    if (Section > 0) {
                         JOptionPane.showMessageDialog(null, "Success!", "Data Updated",
                                 JOptionPane.INFORMATION_MESSAGE);
                     } else {
