@@ -436,7 +436,9 @@ class updating extends Inserting {
         }
     }
 }
-
+class deleting extends updating{
+        
+}
 public class CURD {
     public static void main(String[] args) throws Exception {
         updating ob = new updating();
