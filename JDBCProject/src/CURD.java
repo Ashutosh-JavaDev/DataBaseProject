@@ -248,6 +248,21 @@ class updating extends Inserting {
                         System.out.println("Data Not Updated");
                     }
                     break;
+                // Case 6
+                case 6:
+                    System.out.println("Enter Roll Number Whose Phone Number want to Update: ");
+                    int oldNumber = sc.nextInt();
+                    System.out.println("Enter the new Phone Number want to Update.");
+                    String newNumber = sc.nextLine();
+                    String vaes = String.format("Update Student set number='%s' where Roll=%d", newNumber, oldNumber);
+                    int reus = statement.executeUpdate(vaes);
+                    if (reus > 0) {
+                        JOptionPane.showMessageDialog(null, "Success!", "Data Updated",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        System.out.println("Data Not Updated");
+                    }
+                    break;
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Updated", JOptionPane.ERROR_MESSAGE);
