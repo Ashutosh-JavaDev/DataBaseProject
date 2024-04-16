@@ -325,7 +325,8 @@ class updating extends Inserting {
                 case 10:
                     System.out.println("Enter Roll Number Whose English Marks want to Update: ");
                     int oldEng = sc.nextInt();
-                    
+                    sc.nextLine();
+
                     System.out.println("Enter the new English Marks want to Update.");
                     float newEnglish = sc.nextFloat();
                     String English = String.format("Update Student set Eng=%f where Roll=%d", newEnglish,
@@ -342,6 +343,8 @@ class updating extends Inserting {
                 case 11:
                     System.out.println("Enter Roll Number Whose Math Marks want to Update: ");
                     int oldMath = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.println("Enter the new English Marks want to Update.");
                     float newMath = sc.nextFloat();
                     String Math = String.format("Update Student set Math=%f where Roll=%d", newMath,
@@ -357,6 +360,8 @@ class updating extends Inserting {
                 case 12:
                     System.out.println("Enter Roll Number Whose Phy Marks want to Update: ");
                     int oldPhy = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.println("Enter the new Phy Marks want to Update.");
                     float newPhy = sc.nextFloat();
                     String Phy = String.format("Update Student set Phy=%f where Roll=%d", newPhy,
@@ -372,6 +377,8 @@ class updating extends Inserting {
                 case 13:
                     System.out.println("Enter Roll Number Whose Che Marks want to Update: ");
                     int oldChe = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.println("Enter the new Phy Marks want to Update.");
                     float newChe = sc.nextFloat();
                     String Che = String.format("Update Student set Che=%f where Roll=%d", newChe,
@@ -387,6 +394,8 @@ class updating extends Inserting {
                 case 14:
                     System.out.println("Enter Roll Number Whose Computer Marks want to Update: ");
                     int oldCom = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.println("Enter the new Computer Marks want to Update.");
                     float newCom = sc.nextFloat();
                     String Com = String.format("Update Student set Computer=%f where Roll=%d", newCom,
@@ -402,6 +411,8 @@ class updating extends Inserting {
                 case 15:
                     System.out.println("Enter Roll Number Whose Statics Marks want to Update: ");
                     int oldStat = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.println("Enter the new Computer Marks want to Update.");
                     float newStat = sc.nextFloat();
                     String Stat = String.format("Update Student set Stat=%f where Roll=%d", newStat,
