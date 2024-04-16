@@ -444,6 +444,14 @@ class deleting extends updating{
             catch(ClassNotFoundException e){
                 JOptionPane.showMessageDialog(null, e.getMessage(),"Class Not Found" ,JOptionPane.ERROR_MESSAGE);
             }
+            try{
+                Connection conn=DriverManager.getConnection(url, username, password);
+                Statement state=conn.createStatement();
+                
+            }
+            catch(SQLException e){
+                JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Deleted!", JOptionPane.ERROR_MESSAGE);
+            }
         }
 }
 public class CURD {
