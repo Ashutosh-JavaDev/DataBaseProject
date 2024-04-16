@@ -312,10 +312,26 @@ class updating extends Inserting {
                     int oldEng = sc.nextInt();
                     System.out.println("Enter the new English Marks want to Update.");
                     String newEnglish = sc.nextLine();
-                    String English = String.format("Update Student set batch='%s' where Roll=%d", newEnglish,
+                    String English = String.format("Update Student set Eng='%f' where Roll=%d", newEnglish,
                             oldEng);
                     int english = statement.executeUpdate(English);
                     if (english > 0) {
+                        JOptionPane.showMessageDialog(null, "Success!", "Data Updated",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        System.out.println("Data Not Updated");
+                    }
+                    break;
+                    // Case 11
+                    case 11:
+                    System.out.println("Enter Roll Number Whose Math Marks want to Update: ");
+                    int oldMath = sc.nextInt();
+                    System.out.println("Enter the new English Marks want to Update.");
+                    String newMath = sc.nextLine();
+                    String Math = String.format("Update Student set Math='%f' where Roll=%d", newMath,
+                            oldMath);
+                    int math = statement.executeUpdate(Math);
+                    if (math > 0) {
                         JOptionPane.showMessageDialog(null, "Success!", "Data Updated",
                                 JOptionPane.INFORMATION_MESSAGE);
                     } else {
