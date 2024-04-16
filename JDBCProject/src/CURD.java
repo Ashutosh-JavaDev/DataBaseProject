@@ -277,6 +277,20 @@ class updating extends Inserting {
                         System.out.println("Data Not Updated");
                     }
                     break;
+                case 8:
+                    System.out.println("Enter Roll Number Whose Batch want to Update: ");
+                    int oldBatch = sc.nextInt();
+                    System.out.println("Enter the new Batch want to Update.");
+                    String newBatch = sc.nextLine();
+                    String batch = String.format("Update Student set batch='%s' where Roll=%d", newBatch, oldBatch);
+                    int Batch = statement.executeUpdate(batch);
+                    if (Batch > 0) {
+                        JOptionPane.showMessageDialog(null, "Success!", "Data Updated",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        System.out.println("Data Not Updated");
+                    }
+                    break;
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Data Didn't Updated", JOptionPane.ERROR_MESSAGE);
