@@ -460,9 +460,9 @@ class reading extends deleting {
     public void read() {
         classCating();
         try{
-            Connection conn=DriverManager.getConnection(url,password,url);
+            Connection conn=DriverManager.getConnection(url,username,password);
             Statement state=conn.createStatement();
-            String values=String.format("select*from Student");
+            String values="select*from Student";
             ResultSet resultset=state.executeQuery(values);
             while(resultset.next()){
                 int roll=resultset.getInt("Roll");
@@ -470,7 +470,7 @@ class reading extends deleting {
                 String LastName=resultset.getString("LName");
                 String Gender=resultset.getString("gender");
                 String Email=resultset.getString("email");
-                String Phone=resultset.getString("phone");
+                String Phone=resultset.getString("number");
                 String Batch=resultset.getString("batch");
                 float Eng=resultset.getFloat("Eng");
                 float Math=resultset.getFloat("Math");
