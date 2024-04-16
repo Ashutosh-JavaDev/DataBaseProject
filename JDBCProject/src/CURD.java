@@ -312,7 +312,7 @@ class updating extends Inserting {
                     int oldEng = sc.nextInt();
                     System.out.println("Enter the new English Marks want to Update.");
                     String newEnglish = sc.nextLine();
-                    String English = String.format("Update Student set Eng='%f' where Roll=%d", newEnglish,
+                    String English = String.format("Update Student set Eng=%f where Roll=%d", newEnglish,
                             oldEng);
                     int english = statement.executeUpdate(English);
                     if (english > 0) {
@@ -328,7 +328,7 @@ class updating extends Inserting {
                     int oldMath = sc.nextInt();
                     System.out.println("Enter the new English Marks want to Update.");
                     String newMath = sc.nextLine();
-                    String Math = String.format("Update Student set Math='%f' where Roll=%d", newMath,
+                    String Math = String.format("Update Student set Math=%f where Roll=%d", newMath,
                             oldMath);
                     int math = statement.executeUpdate(Math);
                     if (math > 0) {
@@ -343,7 +343,7 @@ class updating extends Inserting {
                     int oldPhy = sc.nextInt();
                     System.out.println("Enter the new Phy Marks want to Update.");
                     String newPhy = sc.nextLine();
-                    String Phy = String.format("Update Student set Phy='%f' where Roll=%d", newPhy,
+                    String Phy = String.format("Update Student set Phy=%f where Roll=%d", newPhy,
                             oldPhy);
                     int phy = statement.executeUpdate(Phy);
                     if (phy > 0) {
