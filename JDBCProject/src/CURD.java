@@ -494,6 +494,7 @@ class reading extends deleting {
 
 class chooseing extends reading{
     public void  choose(){
+       while(true){
         System.out.println("Press 1: TO Insert value in the DataBase\nPress 2: To Retrive the result of DataBase\nPress 3: To Update the value from the Database\nPress 4: To Delete the data from the Database");
         int press=sc.nextInt();
         switch(press){
@@ -509,7 +510,11 @@ class chooseing extends reading{
             case 4:
             delete();
             break;
-        }        
+            default:
+            System.out.println("Invalid Press");
+            break;
+        } 
+       }       
 
     }
 }
