@@ -496,7 +496,11 @@ class chooseing extends reading{
     public void  choose(){
         System.out.println("Press 1: TO Insert value in the DataBase\nPress 2: To Retrive the result of DataBase\nPress 3: To Update the value from the Database\nPress 4: To Delete the data from the Database");
         int press=sc.nextInt();
-        
+        switch(press){
+            case 1:
+            insertValue();
+            break;
+        }        
 
     }
 }
