@@ -493,8 +493,8 @@ class reading extends deleting {
 }
 
 class chooseing extends reading{
-    puv=blic void  choose(){
-        
+    public void  choose(){
+
     }
 }
 public class CURD {
