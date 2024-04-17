@@ -492,6 +492,11 @@ class reading extends deleting {
     }
 }
 
+class chooseing extends reading{
+    puv=blic void  choose(){
+        
+    }
+}
 public class CURD {
     public static void main(String[] args) throws Exception {
         reading ob = new reading();
