@@ -503,6 +503,10 @@ class chooseing extends reading{
             case 2: 
             read();
             break;
+            case 3:
+            update();
+            break;
+
         }        
 
     }
