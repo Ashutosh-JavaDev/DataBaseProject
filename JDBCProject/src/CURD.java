@@ -500,6 +500,9 @@ class chooseing extends reading{
             case 1:
             insertValue();
             break;
+            case 2: 
+            read();
+            break;
         }        
 
     }
