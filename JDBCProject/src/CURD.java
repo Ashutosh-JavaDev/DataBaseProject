@@ -459,65 +459,80 @@ class deleting extends updating {
 class reading extends deleting {
     public void read() {
         classCating();
-        try{
-            Connection conn=DriverManager.getConnection(url,username,password);
-            Statement state=conn.createStatement();
-            String values="select*from Student";
-            ResultSet resultset=state.executeQuery(values);
-            while(resultset.next()){
-                int roll=resultset.getInt("Roll");
-                String FirstName=resultset.getString("FName");
-                String LastName=resultset.getString("LName");
-                String Gender=resultset.getString("gender");
-                String Email=resultset.getString("email");
-                String Phone=resultset.getString("number");
-                String Batch=resultset.getString("batch");
-                float Eng=resultset.getFloat("Eng");
-                float Math=resultset.getFloat("Math");
-                float Phy=resultset.getFloat("Phy");
-                float Che=resultset.getFloat("Che");
-                float Computer=resultset.getFloat("Computer");
-                float Stat=resultset.getFloat("Stat");
-                float Total=resultset.getFloat("Total");
-                float Avg=resultset.getFloat("Ave");
+        try {
+            Connection conn = DriverManager.getConnection(url, username, password);
+            Statement state = conn.createStatement();
+            String values = "select*from Student";
+            ResultSet resultset = state.executeQuery(values);
+            while (resultset.next()) {
+                int roll = resultset.getInt("Roll");
+                String FirstName = resultset.getString("FName");
+                String LastName = resultset.getString("LName");
+                String Gender = resultset.getString("gender");
+                String Email = resultset.getString("email");
+                String Phone = resultset.getString("number");
+                String Batch = resultset.getString("batch");
+                float Eng = resultset.getFloat("Eng");
+                float Math = resultset.getFloat("Math");
+                float Phy = resultset.getFloat("Phy");
+                float Che = resultset.getFloat("Che");
+                float Computer = resultset.getFloat("Computer");
+                float Stat = resultset.getFloat("Stat");
+                float Total = resultset.getFloat("Total");
+                float Avg = resultset.getFloat("Ave");
 
-                System.out.println("Roll: "+roll+"\nFirst Name: "+FirstName+"\nLast Name: "+LastName+"\nGender: "+Gender+"\nEmail: "+Email+"\nPhone Number: "+Phone+"\nBatch: "+Batch+"\nEnglish: "+Eng+"\nMath: "+Math+"\nPhysics: "+Phy+"\nChemistry: "+Che+"\nComputer: "+Computer+"\nStatics: "+Stat+"\nTotal: "+Total+"\nAverage: "+Avg+"\n");
-                System.out.println("----------------------------------------------------------------------------------------------------------------------------");
+                System.out.println("Roll: " + roll + "\nFirst Name: " + FirstName + "\nLast Name: " + LastName
+                        + "\nGender: " + Gender + "\nEmail: " + Email + "\nPhone Number: " + Phone + "\nBatch: " + Batch
+                        + "\nEnglish: " + Eng + "\nMath: " + Math + "\nPhysics: " + Phy + "\nChemistry: " + Che
+                        + "\nComputer: " + Computer + "\nStatics: " + Stat + "\nTotal: " + Total + "\nAverage: " + Avg
+                        + "\n");
+                System.out.println(
+                        "----------------------------------------------------------------------------------------------------------------------------");
 
             }
-        }
-        catch(SQLException e){
-            JOptionPane.showMessageDialog(null, e.getMessage(),"Error!",JOptionPane.ERROR_MESSAGE);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error!", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
 
-class chooseing extends reading{
-    public void  choose(){
-       while(true){
-        System.out.println("Press 1: TO Insert value in the DataBase\nPress 2: To Retrive the result of DataBase\nPress 3: To Update the value from the Database\nPress 4: To Delete the data from the Database");
-        int press=sc.nextInt();
-        switch(press){
-            case 1:
-            insertValue();
-            break;
-            case 2: 
-            read();
-            break;
-            case 3:
-            update();
-            break;
-            case 4:
-            delete();
-            break;
-            default:
-            System.out.println("Invalid Press");
-            break;
-        } 
-       }       
+class chooseing extends reading {
+    public void choose() {
+        while (true) {
+            System.out.println(
+                    "Press 1: TO Insert value in the DataBase\nPress 2: To Retrive the result of DataBase\nPress 3: To Update the value from the Database\nPress 4: To Delete the data from the Database");
+            int press = sc.nextInt();
+
+            if (press == 1) {
+                insertValue();
+                break;
+            }
+
+            if (press == 2) {
+                read();
+                break;
+
+            }
+            if (press == 3) {
+                update();
+                break;
+            }
+            if (press == 4) {
+                delete();
+                break;
+            }
+
+            else {
+                System.out.println("Invalid Press");
+            }
+
+            continue;
+
+        }
 
     }
 }
+
 public class CURD {
     public static void main(String[] args) throws Exception {
         reading ob = new reading();
