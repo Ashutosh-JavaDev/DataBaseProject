@@ -523,7 +523,7 @@ class chooseing extends reading {
             }
 
             else {
-                System.out.println("Invalid Press");
+                System.out.println("Invalid Press\nPress Valid Key");
             }
 
             continue;
@@ -535,7 +535,7 @@ class chooseing extends reading {
 
 public class CURD {
     public static void main(String[] args) throws Exception {
-        reading ob = new reading();
-        ob.read();
+        chooseing ob = new chooseing();
+        ob.choose();
     }
 }
